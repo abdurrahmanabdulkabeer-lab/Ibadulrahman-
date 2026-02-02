@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AK407 Shooter — Simple Web Game</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="title">AK407 Shooter</div>
+    <div class="controls">
+      <div class="stat">Score: <span id="score">0</span></div>
+      <div class="stat">Hits: <span id="hits">0</span></div>
+      <div class="stat">Misses: <span id="misses">0</span></div>
+      <div class="stat">Ammo: <span id="ammo">30</span>/<span id="mag">30</span></div>
+      <button id="reloadBtn" class="btn">Reload (R)</button>
+      <button id="pauseBtn" class="btn">Pause (P)</button>
+      <button id="restartBtn" class="btn">Restart</button>
+    </div>
+  </header>
+
+  <main class="game-wrap">
+    <canvas id="game"></canvas>
+    <div id="overlay" class="overlay hidden">
+      <div class="overlay-card">
+        <h2 id="overlay-title">AK407 Shooter</h2>
+        <p id="overlay-desc">Click / tap to shoot. Aim with mouse. Reload with R. Pause with P.</p>
+        <button id="startBtn" class="btn large">Start Game</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    AK407 is a fictional weapon name used for this demo game. No downloads or installs required — just run in your browser.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+:root{
+  --bg: #0f1724;
+  --panel: #071026;
+  --accent: #f97316;
+  --muted: #94a3b8;
+  --glass: rgba(255,255,255,0.03);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#071028 0%, #0f1724 100%); color:#e6eef8}
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px 18px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-bottom:1px solid rgba(255,255,255,0.02);
+  position:sticky; top:0; z-index:20;
+}
+.title{font-weight:700; font-size:1.05rem; color:var(--accent)}
+.controls{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+.stat{font-size:0.95rem; color:var(--muted)}
+.btn{background:var(--glass); color:#e6eef8; border:0; padding:8px 10px; border-radius:8px; cursor:pointer}
+.btn.large{padding:12px 18px; font-size:1rem}
+
+.game-wrap{display:flex; align-items:center; justify-content:center; padding:14px; height:calc(100vh - 120px)}
+canvas#game{width:100%;height:100%;max-width:1100px;max-height:720px;border-radius:12px;box-shadow: 0 16px 40px rgba(2,6,23,0.6); background: linear-gradient(180deg,#eafaf1 0%, #f8fff9 100%); display:block; touch-action:none}
+
+.footer{padding:12px 18px; color:var(--muted); font-size:0.95rem; text-align:center}
+
+/* Overlay (start / game over) */
+.overlay{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:auto}
+.overlay.hidden{display:none}
+.overlay-card{background:rgba(6,11,17,0.82); border:1px solid rgba(255,255,255,0.03); padding:26px 28px; border-radius:12px; text-align:center; color:#e6eef8; max-width:420px}
+.overlay-card h2{margin:0 0 8px}
+.overlay-card p{color:var(--muted); margin:0 0 18px}
+
+/* HUD ammo indicator small mobile-friendly */
+@media (max-width:700px){
+  .controls{gap:6px}
+  .stat{display:none}
+  .btn{padding:8px}
+  canvas#game{max-height:calc(100vh - 160px)}
+}
